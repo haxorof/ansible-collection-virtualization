@@ -14,8 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare
-        run: mkdir -p ${GITHUB_WORKSPACE}/.ansible
+      - name: ansible-galaxy version
+        run: ansible-galaxy --version
 
       - name: Test to build Ansible collection
-        run: docker run --rm -v ${GITHUB_WORKSPACE}:/mnt -v ${GITHUB_WORKSPACE}/.ansible:/root/.ansible --entrypoint="ansible-galaxy" haxorof/ansible collection build --force --ignore-certs
+        run: ansible-galaxy collection build --force --ignore-certs
