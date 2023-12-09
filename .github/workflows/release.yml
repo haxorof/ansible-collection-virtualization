@@ -34,6 +34,5 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          name: Release ${{ github.ref }}
           body: |
             See changelog [here](https://github.com/haxorof/ansible-collection-virtualization/blob/${{ steps.get_version.outputs.VERSION }}/CHANGELOG.md)
