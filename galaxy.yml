@@ -62,10 +62,17 @@ issues: https://github.com/haxorof/ansible-collection-virtualization/issues
 # uses 'fnmatch' to match the files or directories. Some directories and files like 'galaxy.yml', '*.pyc', '*.retry',
 # and '.git' are always filtered
 build_ignore:
+  - .gitmodules
+  - .gitignore
+  - '**/.gitignore'
+  - '**/.gitattributes'
+  - '**/.editorconfig'
+  - '**/.ansible-lint'
   - .env
+  - '**/.env'
   - .github
+  - '**/.github'
+  - '**/.git'
   - '*.tar.gz'
-  - test
-  - playbooks
 
 
