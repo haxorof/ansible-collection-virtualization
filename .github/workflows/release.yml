@@ -17,6 +17,9 @@ jobs:
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
+      - name: Build Ansible collection
+        run: ansible-galaxy collection build
+
       - name: Publish collection
         run: ansible-galaxy collection publish --token ${ANSIBLE_GALAXY_API_KEY} ./haxorof-virtualization-${{ steps.get_version.outputs.VERSION }}.tar.gz
         env:
