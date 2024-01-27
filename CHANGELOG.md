@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](../../releases/tag/X.Y.Z)
 
+## Added
+
+- Added support for ARM64 in docker_ce role.
+
 ## [1.0.0](../../releases/tag/1.0.0) - 2023-12-09
 
 ### Added
