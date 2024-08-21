@@ -6,6 +6,12 @@
 
 Ansible collection containing roles for different kind of virtualization technologies.
 
+Download and install [this collection via Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/haxorof/virtualization/):
+
+```shell
+ansible-galaxy collection install haxorof.virtualization
+```
+
 ## Roles
 
 - docker_ce (haxorof.docker_ce, version 6.0.0)
