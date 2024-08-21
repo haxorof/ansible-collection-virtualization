@@ -8,7 +8,7 @@ Ansible collection containing roles for different kind of virtualization technol
 
 ## Roles
 
-- docker_ce (haxorof.docker_ce, version 5.1.0)
+- docker_ce (haxorof.docker_ce, version 6.0.0)
 
 ## License
 
