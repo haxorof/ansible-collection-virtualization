@@ -14,7 +14,7 @@ ansible-galaxy collection install haxorof.virtualization
 
 ## Roles
 
-- docker_ce (haxorof.docker_ce, version 6.0.0)
+- docker_ce (haxorof.docker_ce, version 6.1.0)
 
 ## License
 

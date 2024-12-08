@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](../../releases/tag/X.Y.Z)
 
+## [2.1.0](../../releases/tag/2.1.0) - 2024-12-09
+
+## Added
+
+- roles/docker_ce: Support for DNF 5 in Fedora 41 and later [@wzzrd]
+- roles/docker_ce: Added `docker_install_setup_repos_dependencies` for user to disable/enable any handing of dependencies related to repo setup.
+
+## Changed
+
+- roles/docker_ce: Improved handling between different package managers related to RedHat varity (e.g. yum, dnf, dnf5)
+
+## Deprecated
+
+- roles/docker_ce: Support for Python 2
+- roles/docker_ce: Support for RHEL 7 and CentOS 7
+- roles/docker_ce: Support for ansible-core 2.16
+- roles/docker_ce: Linux Mint 18 and 19 in experimental variable `docker_x_mint_ubuntu_mapping`
+
+## Fixed
+
+- roles/docker_ce: Change repository URL for RHEL to use "rhel" instead of "centos"
+
 ## [2.0.0](../../releases/tag/2.0.0) - 2024-08-21
 
 ## Added
