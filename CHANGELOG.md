@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](../../releases/tag/X.Y.Z)
 
+## [2.2.0](../../releases/tag/2.1.0) - 2025-10-04
+
+## Added
+
+- roles/docker_ce: Added support for Ubuntu 25 [@HRGCompany]
+
+## Fixed
+
+- roles/docker_ce: Docker removed nightly channel from repo-files
+- roles/docker_ce: Failed to remove packages in Fedora when `docker_remove` and `docker_remove_all` are set to `true` due to package dependency.
+- roles/docker_ce: software-properties-common not available on debian 13
+
 ## [2.1.0](../../releases/tag/2.1.0) - 2024-12-09
 
 ## Added
