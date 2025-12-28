@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](../../releases/tag/X.Y.Z)
 
-## [2.2.0](../../releases/tag/2.1.0) - 2025-10-04
+## [2.2.1](../../releases/tag/2.2.1) - 2025-12-28
+
+- roles/docker_ce: INJECT_FACTS_AS_VARS deprecation warning in ansible-core 2.20
+
+## [2.2.0](../../releases/tag/2.2.0) - 2025-10-04
 
 ## Added
 
