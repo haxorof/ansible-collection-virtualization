@@ -4,6 +4,9 @@ on:
     tags:
       - '*'
 
+env:
+  GALAXY_COLLECTION_NAME: virtualization
+
 permissions:
   contents: write
 
@@ -23,11 +26,18 @@ jobs:
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
+      - name: Update galaxy.yml version
+        run: |
+          sed -i "s/version: .*/version: ${{ steps.get_version.outputs.VERSION }}/" galaxy.yml
+
+      - name: Build Ansible collection (dry-run)
+        run: ansible-galaxy collection build --dry-run
+
       - name: Build Ansible collection
         run: ansible-galaxy collection build
 
       - name: Publish collection
-        run: ansible-galaxy collection publish --token ${ANSIBLE_GALAXY_API_KEY} ./haxorof-virtualization-${{ steps.get_version.outputs.VERSION }}.tar.gz
+        run: ansible-galaxy collection publish --token ${ANSIBLE_GALAXY_API_KEY} ./haxorof-${{ env.GALAXY_COLLECTION_NAME }}-${{ steps.get_version.outputs.VERSION }}.tar.gz
         env:
           ANSIBLE_GALAXY_API_KEY: ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
 
@@ -35,4 +45,4 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           body: |
-            See changelog [here](https://github.com/haxorof/ansible-collection-virtualization/blob/${{ steps.get_version.outputs.VERSION }}/CHANGELOG.md)
+            See changelog [here](https://github.com/haxorof/ansible-collection-${{ env.GALAXY_COLLECTION_NAME }}/blob/${{ steps.get_version.outputs.VERSION }}/CHANGELOG.md)
